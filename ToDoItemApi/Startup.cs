@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ToDoItemApi.Service;
 
 namespace ToDoItemApi
 {
@@ -27,6 +28,7 @@ namespace ToDoItemApi
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddSingleton<IToDoItemService, ToDoItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
